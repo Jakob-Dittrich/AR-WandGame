@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig>
+<Tracking>
+<ModelTarget name="ElderWand" motionHint="adaptive" trackingMode="car" optimizeTrackingFor="default"/>
+
+</Tracking>
+
+<Assembly name="ElderWands_assembly" assemblyId="56c1f96b7e4042d18b9587717c986930">
+<Part name="ElderWand" translation="0 0 0" rotation="AD: 0 0 1 0"/>
+<EntryPoint name="GuideView_0000" translation="0.0596454 -0.0637599 0.278215" rotation="AD: 0.988973 0.331863 0.589604 130.166" trained="no">
+
+</EntryPoint>
+<EntryPoint name="GuideView_0001" translation="0.0827724 -0.109484 0.317382" rotation="AD: 0.999198 0.164748 0.290635 123.475" trained="no">
+
+</EntryPoint>
+<EntryPoint name="GuideView_0002" translation="0.0710796 -0.0542514 0.317382" rotation="AD: 0.999198 0.164748 0.290635 123.475" trained="no">
+
+</EntryPoint>
+<EntryPoint name="GuideView_0003" translation="0.0703786 -0.0496832 0.329839" rotation="AD: 0.998971 0.208998 0.280745 109.819" trained="no">
+
+</EntryPoint>
+<EntryPoint name="GuideView_0004" translation="-0.000127131 -0.005175 0.390283" rotation="AD: 1 0.00125063 -0.224893 180.622" trained="no">
+
+</EntryPoint>
+<EntryPoint name="GuideView_0005" translation="0.0662934 -0.0170407 0.369657" rotation="AD: 0.921181 0.52771 1.23597 152.857" trained="no">
+
+</EntryPoint>
+
+</Assembly>
+
+</QCARConfig>

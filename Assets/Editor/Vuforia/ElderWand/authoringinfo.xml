@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARInfo>
+<TargetSet version="27.0" toolVersion="10.20.3">
+<ModelTarget name="ElderWand" targetId="85c718b6dd5b48e49f38fa31a0e5bb41" version="14.0" toolVersion="10.20.3" bbox="-0.014229 -0.190578 -0.014237 0.014240 0.190686 0.014232" previewImage="85c718b6dd5b48e49f38fa31a0e5bb41_preview.jpg"/>
+
+</TargetSet>
+
+<Assembly name="ElderWands_assembly" assemblyId="56c1f96b7e4042d18b9587717c986930">
+<Part name="ElderWand" translation="0 0 0" rotation="AD: 0 0 1 0"/>
+<EntryPoint name="GuideView_0000" translation="0.0596454 -0.0637599 0.278215" rotation="AD: 0.988973 0.331863 0.589604 130.166" image="ElderWand_GuideView_0000.png" trained="no">
+
+</EntryPoint>
+<EntryPoint name="GuideView_0001" translation="0.0827724 -0.109484 0.317382" rotation="AD: 0.999198 0.164748 0.290635 123.475" image="ElderWand_GuideView_0001.png" trained="no">
+
+</EntryPoint>
+<EntryPoint name="GuideView_0002" translation="0.0710796 -0.0542514 0.317382" rotation="AD: 0.999198 0.164748 0.290635 123.475" image="ElderWand_GuideView_0002.png" trained="no">
+
+</EntryPoint>
+<EntryPoint name="GuideView_0003" translation="0.0703786 -0.0496832 0.329839" rotation="AD: 0.998971 0.208998 0.280745 109.819" image="ElderWand_GuideView_0003.png" trained="no">
+
+</EntryPoint>
+<EntryPoint name="GuideView_0004" translation="-0.000127131 -0.005175 0.390283" rotation="AD: 1 0.00125063 -0.224893 180.622" image="ElderWand_GuideView_0004.png" trained="no">
+
+</EntryPoint>
+<EntryPoint name="GuideView_0005" translation="0.0662934 -0.0170407 0.369657" rotation="AD: 0.921181 0.52771 1.23597 152.857" image="ElderWand_GuideView_0005.png" trained="no">
+
+</EntryPoint>
+
+</Assembly>
+
+</QCARInfo>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig>
+<Tracking>
+<ModelTarget name="elder_wand" motionHint="adaptive" trackingMode="car" optimizeTrackingFor="default"/>
+
+</Tracking>
+
+<Assembly name="elder_wands_assembly" assemblyId="c85dc4817b124271a3aa11df2397bee9">
+<Part name="elder_wand" translation="0 0 0" rotation="AD: 0 0 1 0"/>
+<EntryPoint name="GuideView_0000" translation="-0.000253122 -0.0137486 0.574068" rotation="AD: 0.894013 -0.889692 0.907086 119.199" trained="no">
+
+</EntryPoint>
+<EntryPoint name="GuideView_0001" translation="0.000880248 -0.0030301 0.789407" rotation="AD: -0.0681847 1.45184 -1.37615 183.699" trained="no">
+
+</EntryPoint>
+<EntryPoint name="GuideView_0002" translation="0.000880244 -0.00303013 0.321972" rotation="AD: -0.0681847 1.45184 -1.37615 183.699" trained="no">
+
+</EntryPoint>
+
+</Assembly>
+
+</QCARConfig>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARInfo>
+<TargetSet version="27.0" toolVersion="10.20.3">
+<ModelTarget name="elder_wand" targetId="93275303e284422f869204543b1946db" version="14.0" toolVersion="10.20.3" bbox="-0.014229 -0.014232 -0.190578 0.014240 0.014237 0.190686" previewImage="93275303e284422f869204543b1946db_preview.jpg"/>
+
+</TargetSet>
+
+<Assembly name="elder_wands_assembly" assemblyId="c85dc4817b124271a3aa11df2397bee9">
+<Part name="elder_wand" translation="0 0 0" rotation="AD: 0 0 1 0"/>
+<EntryPoint name="GuideView_0000" translation="-0.000253122 -0.0137486 0.574068" rotation="AD: 0.894013 -0.889692 0.907086 119.199" image="elder_wand_GuideView_0000.png" trained="no">
+
+</EntryPoint>
+<EntryPoint name="GuideView_0001" translation="0.000880248 -0.0030301 0.789407" rotation="AD: -0.0681847 1.45184 -1.37615 183.699" image="elder_wand_GuideView_0001.png" trained="no">
+
+</EntryPoint>
+<EntryPoint name="GuideView_0002" translation="0.000880244 -0.00303013 0.321972" rotation="AD: -0.0681847 1.45184 -1.37615 183.699" image="elder_wand_GuideView_0002.png" trained="no">
+
+</EntryPoint>
+
+</Assembly>
+
+</QCARInfo>
