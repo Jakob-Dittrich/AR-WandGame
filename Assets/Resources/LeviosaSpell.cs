@@ -81,29 +81,85 @@ public class LeviosaSpell : MonoBehaviour
 
     private void CreatePanels()
     {
-        // Start Panel
-        startPanel = CreatePanel("StartPanel");
-        SetPanelPosition(startPanel,true, -1, 100, -416, 177);
-
-        // Up Panel
-        upLeftPanel = CreatePanel("UpLeftPanel");
-        SetPanelPosition(upLeftPanel,true, -1, 250, -247, 347);
 
         // Down Panel
         downLeftPanel = CreatePanel("DownLeftPanel");
-        SetPanelPosition(downLeftPanel, true, 1, 350, -80, 300);
+        RectTransform rectTransformDownLeft = downLeftPanel.GetComponent<RectTransform>();
+        rectTransformDownLeft.pivot = new Vector2(0, 0);
+
+        rectTransformDownLeft.anchorMin = new Vector2(0.5f, 0.5f);
+        rectTransformDownLeft.anchorMax = new Vector2(0.5f, 0.5f);
+        rectTransformDownLeft.localRotation = Quaternion.Euler(0f, 0f, 45f);
+        rectTransformDownLeft.sizeDelta = new Vector2(130, 350);
+        rectTransformDownLeft.anchoredPosition = new Vector2(0, 0);
+
+        // Up Panel
+        upLeftPanel = CreatePanel("UpLeftPanel");
+        upLeftPanel.transform.SetParent(downLeftPanel.transform, false);
+
+        RectTransform rectTransformUpLeft = upLeftPanel.GetComponent<RectTransform>();
+        rectTransformUpLeft.pivot = new Vector2(1, 0);
+
+        rectTransformUpLeft.anchorMin = new Vector2(1, 01);
+        rectTransformUpLeft.anchorMax = new Vector2(1, 1);
+        rectTransformUpLeft.localRotation = Quaternion.Euler(0f, 0f, 90f);
+        rectTransformUpLeft.sizeDelta = new Vector2(130, 250);
+        rectTransformUpLeft.anchoredPosition = new Vector2(0, 0);
+        rectTransformUpLeft.localScale = new Vector3(1, 1, 1);
+
+        // Start Panel
+        startPanel = CreatePanel("StartPanel");
+        startPanel.transform.SetParent(upLeftPanel.transform, false);
+
+        RectTransform rectTransStart = startPanel.GetComponent<RectTransform>();
+        rectTransStart.pivot = new Vector2(1, 0);
+
+        rectTransStart.anchorMin = new Vector2(1, 01);
+        rectTransStart.anchorMax = new Vector2(1, 1);
+        rectTransStart.localRotation = Quaternion.Euler(0f, 0f, 0);
+        rectTransStart.sizeDelta = new Vector2(130, 100);
+        rectTransStart.anchoredPosition = new Vector2(0, 0);
+        rectTransStart.localScale = new Vector3(1, 1, 1);
 
         // Up Again Panel
         upRightPanel = CreatePanel("UpRigthPanel");
-        SetPanelPosition(upRightPanel, true, -1, 350, 135, 300);
+        RectTransform rectTransformUpRigth = upRightPanel.GetComponent<RectTransform>();
+        rectTransformUpRigth.pivot = new Vector2(1, 0);
+
+        rectTransformUpRigth.anchorMin = new Vector2(0.5f, 0.5f);
+        rectTransformUpRigth.anchorMax = new Vector2(0.5f, 0.5f);
+        rectTransformUpRigth.localRotation = Quaternion.Euler(0f, 0f, -45f);
+        rectTransformUpRigth.sizeDelta = new Vector2(130, 350);
+        rectTransformUpRigth.anchoredPosition = new Vector2(0, 0);
+
 
 
         downPanel = CreatePanel("DownPanel");
-        SetPanelPosition(downPanel, false, -1, 300, 280, 250);
+        downPanel.transform.SetParent(upRightPanel.transform, false);
+
+        RectTransform rectTransformDownRigth = downPanel.GetComponent<RectTransform>();
+        rectTransformDownRigth.pivot = new Vector2(1, 1);
+
+        rectTransformDownRigth.anchorMin = new Vector2(1, 01);
+        rectTransformDownRigth.anchorMax = new Vector2(1, 1);
+        rectTransformDownRigth.localRotation = Quaternion.Euler(0f, 0f, 45f);
+        rectTransformDownRigth.sizeDelta = new Vector2(130, 300);
+        rectTransformDownRigth.anchoredPosition = new Vector2(0, 0);
+        rectTransformDownRigth.localScale = new Vector3(1, 1, 1);
 
         // End Panel
         endPanel = CreatePanel("EndPanel");
-        SetPanelPosition(endPanel, false, -1, 100, 280, -23);
+        endPanel.transform.SetParent(downPanel.transform, false);
+
+        RectTransform rectTransEnd = endPanel.GetComponent<RectTransform>();
+        rectTransEnd.pivot = new Vector2(0, 1);
+
+        rectTransEnd.anchorMin = new Vector2(0, 0);
+        rectTransEnd.anchorMax = new Vector2(0, 0);
+        rectTransEnd.localRotation = Quaternion.Euler(0f, 0f, 0);
+        rectTransEnd.sizeDelta = new Vector2(130, 100);
+        rectTransEnd.anchoredPosition = new Vector2(0, 0);
+        rectTransEnd.localScale = new Vector3(1, 1, 1);
     }
 
     private GameObject CreatePanel(string name)
@@ -113,6 +169,18 @@ public class LeviosaSpell : MonoBehaviour
         panel.GetComponent<Image>().color = passiveColor;
         //SetPanelPosition(panel, point, left);
         return panel;
+    }
+
+    void SetPanelPosition2(GameObject panel, int direction, bool rotate, Vector2 pivot)
+    {
+        RectTransform rectTransform = panel.GetComponent<RectTransform>();
+        rectTransform.pivot = pivot;
+
+        rectTransform.anchorMin = new Vector2(0.5f, 0.5f);
+        rectTransform.anchorMax = new Vector2(0.5f, 0.5f);
+        rectTransform.localRotation = Quaternion.Euler(0f, 0f, 45f * direction);
+        rectTransform.sizeDelta = new Vector2(130, 350);
+        rectTransform.anchoredPosition = new Vector2(0, 500);
     }
 
     void SetPanelPosition(GameObject panel, bool rotate, int direction, float heigth, float x, float y)

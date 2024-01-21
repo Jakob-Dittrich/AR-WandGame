@@ -39,7 +39,7 @@ public class LumosSpell : MonoBehaviour
     private LumosStates currentState;
 
     private Color activeColor = new Color(0, 1, 0, 0.5f); // Green transparent
-    private Color passiveColor = new Color(0.5f, 0.5f, 0.5f, 0.5f); // Grey transparent
+    private Color passiveColor = new Color(0.5f, 0.5f, 0.5f, 0.9f); // Grey transparent
 
     void Start()
     {
@@ -82,45 +82,62 @@ public class LumosSpell : MonoBehaviour
     {
         // Adjust the panel creation logic for right to left movement
 
-        // Start Panel
-        startPanel = CreatePanel("StartPanel", -1, false);
-
-        // Right Panel
-        upPanel = CreatePanel("UpPanel", -1, true);
 
         // Left Panel
-        downPanel = CreatePanel("DownPanel", 1, true);
+        upPanel = CreatePanel("UpPanel", -1, true, new Vector2(0, 1));
+
+        // Right Panel
+        downPanel = CreatePanel("DownPanel", 1, true, new Vector2(1, 1));
+
+        // Start Panel
+        startPanel = CreatePanel("StartPanel", -1, false, new Vector2(0, 1));
 
         // End Panel
-        endPanel = CreatePanel("EndPanel", 1, false);
+        endPanel = CreatePanel("EndPanel", 1, false, new Vector2(0, 1));
     }
 
 
-    private GameObject CreatePanel(string name, int direction, bool rotate)
+    private GameObject CreatePanel(string name, int direction, bool rotate, Vector2 pivot)
     {
         GameObject panel = new GameObject(name, typeof(Image), typeof(RectTransform));
         panel.transform.SetParent(GameObject.Find("Canvas").transform);
-        panel.GetComponent<Image>().color = passiveColor;
-        SetPanelPosition(panel, direction, rotate);
-        return panel;
-    }
-
-    void SetPanelPosition(GameObject panel, int direction, bool rotate)
-    {
-        RectTransform rectTransform = panel.GetComponent<RectTransform>();
-        rectTransform.anchorMin = new Vector2(0.5f, 0.5f);
-        rectTransform.anchorMax = new Vector2(0.5f, 0.5f);
-        rectTransform.localRotation = Quaternion.Euler(0f, 0f, 45f * direction);
-
-        if (rotate)
+        if(rotate)
         {
-            rectTransform.sizeDelta = new Vector2(130, 350);
-            rectTransform.anchoredPosition = new Vector2(direction * 106, 300);
+            panel.GetComponent<Image>().color = passiveColor;
         }
         else
         {
+            panel.GetComponent<Image>().color = activeColor;
+        }
+        SetPanelPosition(panel, direction, rotate, pivot);
+        return panel;
+    }
+
+    void SetPanelPosition(GameObject panel, int direction, bool rotate, Vector2 pivot)
+    {
+        RectTransform rectTransform = panel.GetComponent<RectTransform>();
+        rectTransform.pivot = pivot;
+
+        if (rotate)
+        {
+            rectTransform.anchorMin = new Vector2(0.5f, 0.5f);
+            rectTransform.anchorMax = new Vector2(0.5f, 0.5f);
+            rectTransform.localRotation = Quaternion.Euler(0f, 0f, 45f * direction);
+            rectTransform.sizeDelta = new Vector2(130, 350);
+            rectTransform.anchoredPosition = new Vector2(0, 500);
+        }
+        else
+        {
+            GameObject parent = direction == -1 ? upPanel : downPanel;
+            panel.transform.SetParent(parent.transform, false);
+            rectTransform.anchorMin = new Vector2(0, 0);
+            rectTransform.anchorMax = new Vector2(0, 0);
+
+            rectTransform.localRotation = Quaternion.Euler(0f, 0f, 0);
+            rectTransform.localScale = new Vector3(1, 1,1);
+
             rectTransform.sizeDelta = new Vector2(130, 100);
-            rectTransform.anchoredPosition = new Vector2(direction * 324, 82);
+            rectTransform.anchoredPosition = new Vector2(0,0);
         }
     }
 
